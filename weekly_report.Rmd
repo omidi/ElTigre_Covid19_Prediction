@@ -1,0 +1,206 @@
+---
+title: "El Tigre Weekly Prediction"
+author: "Saeed Omidi"
+date: "`r format(Sys.time(), '%B %e, %Y')`"
+output:
+  bookdown::gitbook:
+    split_by: none
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      search: yes
+      edit : null
+      toolbar:
+        position: fixed  
+  bookdown::pdf_document2:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+---
+
+```{r preprocessing, echo=FALSE, message=FALSE, include=FALSE}
+# Setting the parameters for the report
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, fig.path = "figures/", fig.align='center', 
+                      # dev = c('pdf', 'png'), 
+                      pdf.options(encoding = "ISOLatin9.enc"))
+
+# Libraries
+library(tidyverse)
+library(lubridate)
+library(ggdark)
+library(gridExtra)
+library(knitr)
+
+source('comparison.R')
+```
+
+> "Football is like chess only without the dice" - Lukas Podolski
+
+# Introduction 
+
+We have used the prediction of previous week and compare them against the John Hopkins official data taken from their website (https://www.worldometers.info/coronavirus/)
+at around noone. The official numbers are shown bellow. 
+
+```{r}
+stat <- tidyr::spread(stat_df, type, count)
+kable(stat, caption = "Official numbers for COVID-19 total cases and total death for different countries. ")
+```
+
+Next figure shows the predicted values (Y-axis) against the official numbers (X-axis).  
+
+```{r, fig.width=8, fig.height=7}
+p_scatter
+```
+
+
+# Calculating errors 
+
+## Net error
+Each prediction is characterized by an error. Here, error is defined by the following equation: 
+
+$e = y - \hat{y}$ 
+
+The negative number indicate pessimistic prediction and positive number an indication of optimisim. 
+Next figure shows the total (sum) of the absolute error ($\sum_i|y_i|$) for each participant. 
+
+```{r, fig.height=6.2, fig.width=7}
+p_error
+```
+We can also quantify the total error for each category (total cases and death numbers), separately. This may show different ranking to each predictions. 
+
+```{r , fig.height=12, fig.width=7}
+gridExtra::grid.arrange(p_total_error, p_death_error, nrow = 2)
+```
+
+## Normalized error 
+
+It's also interesting to normalize the error. Instead of large numbers (like US) determines the final ranking, we can try to normalize the errors. 
+In this way, we are making all the predictions comparable. 
+
+$$ 
+e = \frac{y - \hat{y}}{y} = 1 - \frac{\hat{y}}{y} 
+$$ 
+
+For simplicity in understanding the numbers, they were converted to percentage. 
+
+```{r, fig.height=6.2, fig.width=7}
+p_error_normalized
+```
+
+We can also quantify the total error for each category (total cases and death numbers), separately. This may show different ranking to each predictions. 
+
+```{r , fig.height=12, fig.width=7}
+gridExtra::grid.arrange(p_total_error_normalized, p_death_error_weighted, nrow = 2)
+```
+
+## Final results
+Therefore, here is the final ranking:
+
+```{r results='asis'}
+# players ranking 
+tbl <- df %>% 
+  group_by(name) %>% 
+  summarise(total_error = round(mean(abs(normalized_error * 100)), 2)) %>% 
+  arrange(total_error) %>% 
+  mutate(rank = row_number()) %>% 
+  select(Ranking = rank, Name = name,`Average error` = total_error)
+  
+kable(tbl, caption = "Participants ranking")
+```
+
+# Pessimism 
+Next we can rank the players by the sum of errors ($\sum_i e_i$). It's an indication of 
+pessimism, if this value is negative. Therefore, we are ranking players based on their 
+level of negativeness! 
+
+```{r}
+# most pessimistic player 
+tbl <- df %>% 
+  group_by(name) %>% 
+  summarise(
+    mentality = round(mean(normalized_error * 100), 2)) %>% 
+  arrange(mentality) %>% 
+  mutate(rank = row_number()) %>% 
+  select(Ranking = rank, Name = name, Mentality = mentality)
+
+kable(tbl, caption = "Participants ranking according to their pessimism")
+```
+
+# Countries
+
+## Player ranking by country
+
+For each country, we have separately ranked players. Bellow how each player performed on each country (x-axis).
+Interestingly, Smooth Op did very bad for his own country. He had a very pessimistic prediction for India! 
+
+```{r , fig.height=6, fig.width=9}
+p_countries
+```
+
+We can also see the actual prediction errors:
+
+```{r , fig.height=6, fig.width=9.6}
+p_country_error
+```
+
+## Ranking countries by difficulty 
+
+Table bellow shows the ranking of countries by the level of difficulties. The hardest country was India, very closely followed by Jamaica. 
+The most optimistic predictions were done for the US! 
+
+```{r}
+# ranking countries by difficulty  ----------------------------------------
+
+tbl <- df %>% 
+  group_by(country) %>% 
+  summarise(
+    total_error = round(mean(abs(normalized_error) * 100), 2), 
+    mentality = round(mean(normalized_error) * 100, 2)
+            ) %>% 
+  mutate(rank = rank(total_error))  %>% 
+  select(Ranking = rank, Country = country, `Average error` = total_error, Mentality = mentality)
+
+kable(tbl, caption = "Ranking countries by the total error. From hardest to easiest.")
+```
+
+
+# Type 
+## Prediction error Death vs. Total cases
+Prediction error between death and total cases were fairly similar. However, death seemed to be slightly more difficult. 
+
+```{r}
+tbl <- df %>% 
+  group_by(type) %>% 
+  summarise(
+    total_error = round(mean(abs(normalized_error) * 100), 2), 
+    mentality = round(mean(normalized_error) * 100, 2)
+            ) %>% 
+  mutate(rank = rank(total_error))  %>% 
+  select(Ranking = rank, Type = type, `Total error` = total_error, Mentality = mentality)
+
+kable(tbl)
+
+
+```
+
+# Next week
+We will select up to five countries from the list bellow. This list is genearted by the machine, selecting 10 random countries. 
+
+```{r echo=TRUE}
+# List of countries
+library(countrycode)
+
+set.seed(666)
+
+countries <- codelist$country.name.en
+selected_countries <- sample(countries, 10)
+
+print(selected_countries)
+```
