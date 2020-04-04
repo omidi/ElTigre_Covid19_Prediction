@@ -1,2 +1,2 @@
-# saeed.omidi-gmail.com
+# Introduction
 ElTigre COVID-19 Prediction Challenge 
