@@ -219,10 +219,12 @@ p_country_error <- df %>%
 
 p_country_error
 
-# # List of countries
-# library(countrycode)
-# 
-# set.seed(666)
-# 
-# countries <- codelist$country.name.en
-# selected_countries <- sample(countries, 10)
+# List of countries
+library(countrycode)
+
+set.seed(124)
+
+countries <- codelist$country.name.en
+selected_countries <- sample(countries, 10)
+
+print(selected_countries)
