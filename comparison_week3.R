@@ -2,13 +2,22 @@
 library(tidyverse)
 library(lubridate)
 library(ggdark)
+library(countrycode) # List of countries
+library(hrbrthemes)
+
+
 
 # Loading the data
 pred_df <- read_csv('predictions/ET_predictions.csv')   # predictions 
 stat_df <- read_csv('data/JH_stats.csv')   # actual stats
 
+# the week
+all_dates <- lubridate::date(c("2020-04-04", "2020-04-11", "2020-04-18"))
+latest_date <- all_dates[length(all_dates)] 
+
 stat_df <- stat_df %>% 
-  mutate(date = lubridate::mdy(date))
+  mutate(date = lubridate::mdy(date)) %>% 
+  filter(date <= latest_date)
 
 
 # total number of cases = death + current_cases
@@ -45,8 +54,14 @@ df <- res_df %>%
          normalized_error = (count - prediction) / count) 
 
 
+names <- df %>%
+  filter(date == !! latest_date) %>% 
+  select(name) %>% 
+  distinct()
+names <- df$name
+total_players_this_week <- length(names)
+
 # this week's results -----------------------------------------------------
-latest_date <- max(df$date)
 
 p_latest_error <- df %>%
   filter(date == !! latest_date) %>% 
@@ -121,7 +136,9 @@ p_latest_error_death <- df %>%
 
 
 # timeline  ---------------------------------------------------------
+
 plot_df <- df %>%
+  filter(date <= !!latest_date) %>% 
   group_by(name, date) %>% 
   summarise(error = mean(abs(normalized_error * 100))) %>%
   ungroup() %>% 
@@ -148,10 +165,15 @@ p_timeline <- ggplot(plot_df, aes(x = date, y = error, color = name)) +
 
 # player-country matrix  --------------------------------------------------
 
+# x <- subset(df, country == 'Germany') %>% 
+#   filter(date == !!latest_date) %>% 
+#   group_by(name) %>% summarise(m = mean(abs(normalized_error)) * 100) %>% 
+#   arrange(desc(m)) 
+
 p_countries <- df %>% 
   filter(date == !!latest_date) %>% 
   group_by(country, name) %>% 
-  summarise(total_error = sum(abs(normalized_error))) %>% 
+  summarise(total_error = mean(abs(normalized_error)) * 100) %>% 
   ungroup() %>% 
   group_by(country) %>% 
   mutate(rank = as.character(rank(total_error))) %>% 
@@ -170,9 +192,19 @@ p_countries <- df %>%
   xlab('') + ylab('')
 
 
+countries_tbl <- df %>% 
+  filter(date == !!latest_date) %>% 
+  group_by(country, name) %>% 
+  summarise(total_error = round(mean(abs(normalized_error)) * 100, 3)) %>% 
+  ungroup() %>% 
+  spread(country, total_error) 
+
+  # group_by(country) %>% 
+  # mutate(rank = as.character(rank(total_error)))
+
 
 p_country_error <- df %>% 
-  # filter(date == !!latest_date) %>% 
+  filter(date <= !!latest_date) %>% 
   group_by(country, name) %>% 
   summarise(average_error = mean(normalized_error * 100)) %>% 
   ungroup() %>% 
@@ -192,33 +224,19 @@ p_country_error <- df %>%
   xlab('') + ylab('')
 
 
-p_country_error
-
-# List of countries
-library(countrycode)
-
-set.seed(4)
-
-countries <- codelist$country.name.en
-selected_countries <- sample(countries, 20)
-
-print(selected_countries)
-
-
-
-
 # Best/Worst predictions --------------------------------------------------
-df %>%
-  filter(date == !! latest_date) %>% 
-  arrange(abs(normalized_error)) %>% 
-  select(name, country, type, prediction, actual_count = count, error = normalized_error) %>% 
-  mutate(error = round(error*100, 2)) %>% 
-  head(10)
+# df %>%
+#   filter(date == !! latest_date) %>% 
+#   arrange(abs(normalized_error)) %>% 
+#   select(name, country, type, prediction, actual_count = count, error = normalized_error) %>% 
+#   mutate(error = round(error*100, 2)) %>% 
+#   head(10)
 
 
 
 
 # badges definition -------------------------------------------------------
+
 assign_badges <- function(error) {
   error <- abs(error)
   
@@ -269,6 +287,16 @@ lst <- list("Average" = 0,
             "Very bad" = 0)
 
 
+score_lst <- list("Average" = 0,   
+            "Bad" = -1,
+            "Good" = 1,
+            "Oracle" = 10, 
+            "Outstanding" = 3, 
+            "Superhuman" = 5,
+            "Terrible" = -5, 
+            "Very bad" = -3)
+
+
 tbl <- df %>% 
   select(name, badge) %>% 
   ungroup() %>% 
@@ -283,7 +311,7 @@ tbl <- df %>%
 
 
 M <- as.matrix(tbl[, 2:ncol(tbl)])
-S <- matrix(c(10, 5, 3, 1, 0, -1, -3, -5))
+S <- matrix(unlist(score_lst[colnames(M)]))
 
 scores <- M %*% S
 tbl$Points <- scores[, 1]
@@ -291,3 +319,56 @@ tbl$Points <- scores[, 1]
 fixture_tbl <- tbl %>% 
   arrange(desc(Points))
 
+
+# Score evolution over time --------------------------------------------------------
+assign_score <- function(badge, score_lst) {
+  score_lst[[badge]]
+}
+
+df <- df %>% 
+  rowwise() %>% 
+  mutate(point = assign_score(badge, score_lst))
+
+cumulative_points <- function(dfx, all_dates) { 
+  all_points <- tibble(date = all_dates)
+  all_points <- subset(all_points, date >= min(dfx$date))
+  dfx <- dfx %>% 
+    full_join(all_points, by = 'date') %>% 
+    replace_na(list(total_point = 0, name = dfx$name[1])) %>% 
+    arrange(date) 
+  
+  dfx$total_point <- cumsum(dfx$total_point)
+  
+  dfx
+}
+
+points_over_time <- df %>% 
+  group_by(name, date) %>% 
+  summarise(total_point = sum(point)) %>% 
+  ungroup() %>% 
+  group_by(name) %>% 
+  do(cumulative_points(., all_dates = all_dates))
+
+points_evolution_over_time_plt <- points_over_time %>% 
+  ggplot(aes(x = date, y = total_point, color = name)) +
+  geom_path(lwd = 1.6) + 
+  geom_point(size = 2.5) + 
+  # geom_smooth(method = 'loess') + 
+  theme_ipsum_rc(axis="xy") + 
+  labs(x = 'Date', 
+       y = 'Total points', 
+       title = 'Evolution of total points for each player',
+       caption = 'Players who did not participate in subsequent rounds (e.g., A-Aron), will maintain their latest score. ') + 
+  scale_color_ipsum() # + 
+  # ylim(-25, 20)
+
+  
+
+# Relationship of error to total cases ------------------------------------
+
+# ggplot(df) + 
+#   geom_jitter(aes(x = count, y = abs(normalized_error)), color = '#3d5675') + 
+#   scale_x_log10() + 
+#   theme_ipsum_rc() + 
+#   geom_smooth(aes(x = count, y = abs(normalized_error)), method = 'lm')
+    

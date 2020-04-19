@@ -24,7 +24,7 @@
 <meta name="author" content="Saeed Omidi" />
 
 
-<meta name="date" content="2020-04-18" />
+<meta name="date" content="2020-04-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,9 +143,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path=""><a href="#prediction-error-death-vs.-total-cases"><i class="fa fa-check"></i><b>6.1</b> Prediction error Death vs. Total cases</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path=""><a href="#best-and-worst-predictions"><i class="fa fa-check"></i><b>7</b> Best and worst predictions</a></li>
-<li class="chapter" data-level="8" data-path=""><a href="#table"><i class="fa fa-check"></i><b>8</b> Table</a></li>
-<li class="chapter" data-level="9" data-path=""><a href="#next-week"><i class="fa fa-check"></i><b>9</b> Next week</a></li>
-<li class="chapter" data-level="10" data-path=""><a href="#apendix-a-scoring-system"><i class="fa fa-check"></i><b>10</b> Apendix A: Scoring system</a></li>
+<li class="chapter" data-level="8" data-path=""><a href="#table"><i class="fa fa-check"></i><b>8</b> Table</a><ul>
+<li class="chapter" data-level="8.1" data-path=""><a href="#evolution-of-points-over-time"><i class="fa fa-check"></i><b>8.1</b> Evolution of points over time</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path=""><a href="#average-error-each-week"><i class="fa fa-check"></i><b>9</b> Average error each Week</a></li>
+<li class="chapter" data-level="10" data-path=""><a href="#next-week"><i class="fa fa-check"></i><b>10</b> Next week</a></li>
+<li class="chapter" data-level="11" data-path=""><a href="#apendix-a-scoring-system"><i class="fa fa-check"></i><b>11</b> Apendix A: Scoring system</a></li>
+<li class="chapter" data-level="12" data-path=""><a href="#apendix-b-all-predictions"><i class="fa fa-check"></i><b>12</b> Apendix B: All predictions</a></li>
 </ul>
 
       </nav>
@@ -166,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">El Tigre Weekly Prediction Week 3</h1>
 <p class="author"><em>Saeed Omidi</em></p>
-<p class="date"><em>April 18, 2020</em></p>
+<p class="date"><em>April 19, 2020</em></p>
 </div>
 <blockquote>
 <p>“I don’t picture women in football, I’m sorry but this is my thinking” - Gennaro Gattuso</p>
@@ -177,7 +181,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 at around noone. The official numbers are shown bellow.</p>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-1">Table 1.1: </span>Official numbers for COVID-19 total cases and total death for different countries.
+<span id="tab:unnamed-chunk-1">Table 1.1: </span>This week’s official numbers for COVID-19 total cases and total death for different countries.
 </caption>
 <thead>
 <tr>
@@ -198,20 +202,6 @@ Total
 <tbody>
 <tr>
 <td style="text-align:left;">
-Chile
-</td>
-<td style="text-align:left;">
-2020-04-11
-</td>
-<td style="text-align:right;">
-65
-</td>
-<td style="text-align:right;">
-6501
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Germany
 </td>
 <td style="text-align:left;">
@@ -222,62 +212,6 @@ Germany
 </td>
 <td style="text-align:right;">
 141397
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-India
-</td>
-<td style="text-align:left;">
-2020-04-04
-</td>
-<td style="text-align:right;">
-86
-</td>
-<td style="text-align:right;">
-3082
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Israel
-</td>
-<td style="text-align:left;">
-2020-04-11
-</td>
-<td style="text-align:right;">
-96
-</td>
-<td style="text-align:right;">
-10525
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jamaica
-</td>
-<td style="text-align:left;">
-2020-04-04
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-53
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Japan
-</td>
-<td style="text-align:left;">
-2020-04-11
-</td>
-<td style="text-align:right;">
-99
-</td>
-<td style="text-align:right;">
-6005
 </td>
 </tr>
 <tr>
@@ -306,20 +240,6 @@ Poland
 </td>
 <td style="text-align:right;">
 8563
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-US
-</td>
-<td style="text-align:left;">
-2020-04-04
-</td>
-<td style="text-align:right;">
-7406
-</td>
-<td style="text-align:right;">
-277607
 </td>
 </tr>
 </tbody>
@@ -400,6 +320,17 @@ KK
 4
 </td>
 <td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:right;">
+15.63
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
 Vasco
 </td>
 <td style="text-align:right;">
@@ -407,13 +338,13 @@ Vasco
 </td>
 </tr>
 <tr>
-<td style="text-align:right;font-weight: bold;background-color: #ffcfcf !important;">
-5
+<td style="text-align:right;">
+6
 </td>
-<td style="text-align:left;font-weight: bold;background-color: #ffcfcf !important;">
+<td style="text-align:left;">
 Saeedi
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #ffcfcf !important;">
+<td style="text-align:right;">
 31.12
 </td>
 </tr>
@@ -499,6 +430,17 @@ Dr. Brauwolf
 6.34
 </td>
 </tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:right;">
+13.93
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -514,15 +456,123 @@ Pedomi with only 21 points increase is the worst learner.</p>
 <h2><span class="header-section-number">5.1</span> Player ranking by country</h2>
 <p>For each country, we have separately ranked players. Bellow how each player performed on each country (x-axis).</p>
 <p><img src="figures/unnamed-chunk-8-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p>Table bellow shows the <em>average absolute error</em> for each player in each country:</p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-9">Table 5.1: </span>Players average absolute error for Death and Total combined for each country.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:right;">
+Germany
+</th>
+<th style="text-align:right;">
+Kuwait
+</th>
+<th style="text-align:right;">
+Poland
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:right;">
+5.318
+</td>
+<td style="text-align:right;">
+18.066
+</td>
+<td style="text-align:right;">
+6.091
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:right;">
+9.295
+</td>
+<td style="text-align:right;">
+13.245
+</td>
+<td style="text-align:right;">
+7.571
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:right;">
+11.151
+</td>
+<td style="text-align:right;">
+7.110
+</td>
+<td style="text-align:right;">
+9.779
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:right;">
+4.538
+</td>
+<td style="text-align:right;">
+34.790
+</td>
+<td style="text-align:right;">
+7.566
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:right;">
+8.865
+</td>
+<td style="text-align:right;">
+56.501
+</td>
+<td style="text-align:right;">
+27.990
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:right;">
+5.783
+</td>
+<td style="text-align:right;">
+57.110
+</td>
+<td style="text-align:right;">
+7.997
+</td>
+</tr>
+</tbody>
+</table>
 <p>We can also see the actual prediction errors:</p>
-<p><img src="figures/unnamed-chunk-9-1.png" width="921.6" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-10-1.png" width="921.6" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ranking-countries-by-difficulty" class="section level2">
 <h2><span class="header-section-number">5.2</span> Ranking countries by difficulty</h2>
 <p>Table bellow shows the ranking of countries by the level of difficulties.</p>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-10">Table 5.1: </span>Ranking countries by the total error. From hardest to easiest.
+<span id="tab:unnamed-chunk-11">Table 5.2: </span>Ranking countries by the total error. From hardest to easiest.
 </caption>
 <thead>
 <tr>
@@ -543,35 +593,7 @@ Mentality
 <tbody>
 <tr>
 <td style="text-align:right;">
-5
-</td>
-<td style="text-align:left;">
-Chile
-</td>
-<td style="text-align:right;">
-32.23
-</td>
-<td style="text-align:right;">
--19.61
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
 1
-</td>
-<td style="text-align:left;">
-Germany
-</td>
-<td style="text-align:right;">
-8.08
-</td>
-<td style="text-align:right;">
-5.27
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-9
 </td>
 <td style="text-align:left;">
 India
@@ -585,21 +607,7 @@ India
 </tr>
 <tr>
 <td style="text-align:right;">
-7
-</td>
-<td style="text-align:left;">
-Israel
-</td>
-<td style="text-align:right;">
-60.41
-</td>
-<td style="text-align:right;">
--52.50
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-8
+2
 </td>
 <td style="text-align:left;">
 Jamaica
@@ -616,6 +624,62 @@ Jamaica
 3
 </td>
 <td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:right;">
+60.41
+</td>
+<td style="text-align:right;">
+-52.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:right;">
+41.41
+</td>
+<td style="text-align:right;">
+8.87
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:right;">
+32.23
+</td>
+<td style="text-align:right;">
+-19.61
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:right;">
+31.14
+</td>
+<td style="text-align:right;">
+-5.65
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
 Japan
 </td>
 <td style="text-align:right;">
@@ -627,44 +691,30 @@ Japan
 </tr>
 <tr>
 <td style="text-align:right;">
-4
-</td>
-<td style="text-align:left;">
-Kuwait
-</td>
-<td style="text-align:right;">
-30.41
-</td>
-<td style="text-align:right;">
--13.74
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2
+8
 </td>
 <td style="text-align:left;">
 Poland
 </td>
 <td style="text-align:right;">
-11.89
+11.17
 </td>
 <td style="text-align:right;">
--2.84
+-1.96
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-6
+9
 </td>
 <td style="text-align:left;">
-US
+Germany
 </td>
 <td style="text-align:right;">
-41.41
+7.49
 </td>
 <td style="text-align:right;">
-8.87
+5.14
 </td>
 </tr>
 </tbody>
@@ -702,10 +752,10 @@ Mentality
 Death
 </td>
 <td style="text-align:right;">
-56.71
+55.03
 </td>
 <td style="text-align:right;">
--32.84
+-29.24
 </td>
 </tr>
 <tr>
@@ -716,10 +766,10 @@ Death
 Total
 </td>
 <td style="text-align:right;">
-30.82
+29.18
 </td>
 <td style="text-align:right;">
--19.18
+-18.07
 </td>
 </tr>
 </tbody>
@@ -731,7 +781,7 @@ Total
 First, best predictions:
 <table class="table table-striped" style="font-size: 15px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:unnamed-chunk-12">Table 7.1: </span>Best predictions of the week
+<span id="tab:unnamed-chunk-13">Table 7.1: </span>Best predictions of the week
 </caption>
 <thead>
 <tr>
@@ -798,6 +848,26 @@ Total
 </tr>
 <tr>
 <td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+140000
+</td>
+<td style="text-align:right;">
+141397
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Dr. Brauwolf
 </td>
 <td style="text-align:left;">
@@ -836,32 +906,12 @@ Total
 -2.80
 </td>
 </tr>
-<tr>
-<td style="text-align:left;">
-KK
-</td>
-<td style="text-align:left;">
-Poland
-</td>
-<td style="text-align:left;">
-Total
-</td>
-<td style="text-align:right;">
-8302
-</td>
-<td style="text-align:right;">
-8563
-</td>
-<td style="text-align:right;">
-3.05
-</td>
-</tr>
 </tbody>
 </table>
 <p>Next, we show the worst predictions of the week:</p>
 <table class="table table-striped" style="font-size: 15px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:unnamed-chunk-13">Table 7.2: </span>Worst predictions of the week
+<span id="tab:unnamed-chunk-14">Table 7.2: </span>Worst predictions of the week
 </caption>
 <thead>
 <tr>
@@ -928,6 +978,26 @@ Total
 </tr>
 <tr>
 <td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+66.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Saeedi
 </td>
 <td style="text-align:left;">
@@ -966,26 +1036,6 @@ Death
 33.33
 </td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Dr. Brauwolf
-</td>
-<td style="text-align:left;">
-Kuwait
-</td>
-<td style="text-align:left;">
-Death
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-33.33
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -993,7 +1043,7 @@ Death
 <h1><span class="header-section-number">8</span> Table</h1>
 <table class="table table-striped" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:unnamed-chunk-14">Table 8.1: </span>Ranking table
+<span id="tab:unnamed-chunk-15">Table 8.1: </span>Ranking table
 </caption>
 <thead>
 <tr>
@@ -1043,7 +1093,7 @@ Vasco
 <td style="text-align:right;font-weight: bold;background-color: #c4ffd4 !important;">
 3
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #c4ffd4 !important;width: 3cm; ">
+<td style="text-align:right;font-weight: bold;background-color: #c4ffd4 !important;">
 3
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #c4ffd4 !important;">
@@ -1064,6 +1114,38 @@ Vasco
 </tr>
 <tr>
 <td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 KK
 </td>
 <td style="text-align:right;">
@@ -1075,7 +1157,7 @@ KK
 <td style="text-align:right;">
 2
 </td>
-<td style="text-align:right;width: 3cm; ">
+<td style="text-align:right;">
 3
 </td>
 <td style="text-align:right;">
@@ -1107,7 +1189,7 @@ A-Aron
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;width: 3cm; ">
+<td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
@@ -1139,7 +1221,7 @@ Pedomi
 <td style="text-align:right;">
 1
 </td>
-<td style="text-align:right;width: 3cm; ">
+<td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
@@ -1171,7 +1253,7 @@ Saeedi
 <td style="text-align:right;">
 1
 </td>
-<td style="text-align:right;width: 3cm; ">
+<td style="text-align:right;">
 3
 </td>
 <td style="text-align:right;">
@@ -1203,7 +1285,7 @@ Smooth Op
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;width: 3cm; ">
+<td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
@@ -1235,7 +1317,7 @@ Dr. Brauwolf
 <td style="text-align:right;font-weight: bold;background-color: #ffcfcf !important;">
 2
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #ffcfcf !important;width: 3cm; ">
+<td style="text-align:right;font-weight: bold;background-color: #ffcfcf !important;">
 4
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #ffcfcf !important;">
@@ -1256,9 +1338,17 @@ Dr. Brauwolf
 </tr>
 </tbody>
 </table>
+<div id="evolution-of-points-over-time" class="section level2">
+<h2><span class="header-section-number">8.1</span> Evolution of points over time</h2>
+<p><img src="figures/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="average-error-each-week" class="section level1">
+<h1><span class="header-section-number">9</span> Average error each Week</h1>
+<p><img src="figures/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="next-week" class="section level1">
-<h1><span class="header-section-number">9</span> Next week</h1>
+<h1><span class="header-section-number">10</span> Next week</h1>
 <p>We will select up to five countries from the list bellow. This list is genearted by the machine, selecting 15 random countries.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># List of countries</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(countrycode)</a>
@@ -1282,11 +1372,3010 @@ Dr. Brauwolf
 </ul>
 </div>
 <div id="apendix-a-scoring-system" class="section level1">
-<h1><span class="header-section-number">10</span> Apendix A: Scoring system</h1>
+<h1><span class="header-section-number">11</span> Apendix A: Scoring system</h1>
 <div class="figure">
 <img src="scoring_schema.png" alt="Scoring system" />
 <p class="caption">Scoring system</p>
 </div>
+</div>
+<div id="apendix-b-all-predictions" class="section level1">
+<h1><span class="header-section-number">12</span> Apendix B: All predictions</h1>
+<table class="table table-striped" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-19">Table 12.1: </span>All predictions
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:left;">
+country
+</th>
+<th style="text-align:left;">
+type
+</th>
+<th style="text-align:right;">
+prediction
+</th>
+<th style="text-align:right;">
+true count
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:right;">
+error
+</th>
+<th style="text-align:left;">
+badge
+</th>
+<th style="text-align:right;">
+point
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+280000
+</td>
+<td style="text-align:right;">
+277607
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-0.862
+</td>
+<td style="text-align:left;">
+Superhuman
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+5500
+</td>
+<td style="text-align:right;">
+7406
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+25.736
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+2500
+</td>
+<td style="text-align:right;">
+3082
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+18.884
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-74.419
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-107.547
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-200.000
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+450000
+</td>
+<td style="text-align:right;">
+277607
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-62.100
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:right;">
+7406
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+32.487
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:right;">
+3082
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-62.232
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-74.419
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-13.208
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+33.333
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+400000
+</td>
+<td style="text-align:right;">
+277607
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-44.089
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+4000
+</td>
+<td style="text-align:right;">
+7406
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+45.990
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+6000
+</td>
+<td style="text-align:right;">
+3082
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-94.679
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-132.558
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-50.943
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-66.667
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smooth Op
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+300000
+</td>
+<td style="text-align:right;">
+277607
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-8.066
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smooth Op
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+3000
+</td>
+<td style="text-align:right;">
+7406
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+59.492
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smooth Op
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+8000
+</td>
+<td style="text-align:right;">
+3082
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-159.572
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smooth Op
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-74.419
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smooth Op
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-69.811
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smooth Op
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-66.667
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+500000
+</td>
+<td style="text-align:right;">
+277607
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-80.111
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+6000
+</td>
+<td style="text-align:right;">
+7406
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+18.985
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+7000
+</td>
+<td style="text-align:right;">
+3082
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-127.125
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-190.698
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-88.679
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-233.333
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A-Aron
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+150000
+</td>
+<td style="text-align:right;">
+277607
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+45.967
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A-Aron
+</td>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:right;">
+7406
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+72.995
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A-Aron
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+1500
+</td>
+<td style="text-align:right;">
+3082
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+51.330
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A-Aron
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+-16.279
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A-Aron
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+5.660
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A-Aron
+</td>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2020-04-04
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:left;">
+Oracle
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+3800
+</td>
+<td style="text-align:right;">
+6005
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+36.719
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+115
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-16.162
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+7450
+</td>
+<td style="text-align:right;">
+6501
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-14.598
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-29.231
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+11250
+</td>
+<td style="text-align:right;">
+10525
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-6.888
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+9.375
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+4000
+</td>
+<td style="text-align:right;">
+6005
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+33.389
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+14.141
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:right;">
+6501
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+23.089
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+23.077
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+11000
+</td>
+<td style="text-align:right;">
+10525
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-4.513
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-212.500
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+3900
+</td>
+<td style="text-align:right;">
+6005
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+35.054
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:left;">
+Oracle
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+7200
+</td>
+<td style="text-align:right;">
+6501
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-10.752
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-66.154
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+11100
+</td>
+<td style="text-align:right;">
+10525
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-5.463
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+88
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+8.333
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+6000
+</td>
+<td style="text-align:right;">
+6005
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+0.083
+</td>
+<td style="text-align:left;">
+Superhuman
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-102.020
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+7000
+</td>
+<td style="text-align:right;">
+6501
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-7.676
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-130.769
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+12000
+</td>
+<td style="text-align:right;">
+10525
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-14.014
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-316.667
+</td>
+<td style="text-align:left;">
+Terrible
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+4800
+</td>
+<td style="text-align:right;">
+6005
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+20.067
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+4.040
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+6400
+</td>
+<td style="text-align:right;">
+6501
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+1.554
+</td>
+<td style="text-align:left;">
+Superhuman
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+15.385
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+11000
+</td>
+<td style="text-align:right;">
+10525
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+-4.513
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:left;">
+2020-04-11
+</td>
+<td style="text-align:right;">
+21.875
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+134879
+</td>
+<td style="text-align:right;">
+141397
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+4.610
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+3781
+</td>
+<td style="text-align:right;">
+4352
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+13.120
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+3146
+</td>
+<td style="text-align:right;">
+1751
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-79.669
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+33.333
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+9416
+</td>
+<td style="text-align:right;">
+8563
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-9.961
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saeedi
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+495
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-46.018
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+142000
+</td>
+<td style="text-align:right;">
+141397
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-0.426
+</td>
+<td style="text-align:left;">
+Superhuman
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+3400
+</td>
+<td style="text-align:right;">
+4352
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+21.875
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:right;">
+1751
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-14.220
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:left;">
+Oracle
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+9000
+</td>
+<td style="text-align:right;">
+8563
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-5.103
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pedomi
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+290
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+14.454
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+145000
+</td>
+<td style="text-align:right;">
+141397
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-2.548
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+4000
+</td>
+<td style="text-align:right;">
+4352
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+8.088
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+1800
+</td>
+<td style="text-align:right;">
+1751
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-2.798
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+33.333
+</td>
+<td style="text-align:left;">
+Bad
+</td>
+<td style="text-align:right;">
+-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+9000
+</td>
+<td style="text-align:right;">
+8563
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-5.103
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. Brauwolf
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+315
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+7.080
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+152000
+</td>
+<td style="text-align:right;">
+141397
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-7.499
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+4175
+</td>
+<td style="text-align:right;">
+4352
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+4.067
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:right;">
+1751
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-14.220
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-100.000
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+9200
+</td>
+<td style="text-align:right;">
+8563
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-7.439
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vasco
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+310
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+8.555
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+146500
+</td>
+<td style="text-align:right;">
+141397
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-3.609
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+3700
+</td>
+<td style="text-align:right;">
+4352
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+14.982
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+1923
+</td>
+<td style="text-align:right;">
+1751
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-9.823
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+16.667
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+8302
+</td>
+<td style="text-align:right;">
+8563
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+3.048
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KK
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+298
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+12.094
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+140000
+</td>
+<td style="text-align:right;">
+141397
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+0.988
+</td>
+<td style="text-align:left;">
+Superhuman
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+4000
+</td>
+<td style="text-align:right;">
+4352
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+8.088
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+1700
+</td>
+<td style="text-align:right;">
+1751
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+2.913
+</td>
+<td style="text-align:left;">
+Outstanding
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+66.667
+</td>
+<td style="text-align:left;">
+Very bad
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+9000
+</td>
+<td style="text-align:right;">
+8563
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+-5.103
+</td>
+<td style="text-align:left;">
+Good
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pinche
+</td>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:left;">
+Death
+</td>
+<td style="text-align:right;">
+305
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:left;">
+2020-04-18
+</td>
+<td style="text-align:right;">
+10.029
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
 </div>
             </section>
 

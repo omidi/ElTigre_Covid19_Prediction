@@ -2,13 +2,19 @@
 library(tidyverse)
 library(lubridate)
 library(ggdark)
+library(countrycode)
+
 
 # Loading the data
 pred_df <- read_csv('predictions/ET_predictions.csv')   # predictions 
 stat_df <- read_csv('data/JH_stats.csv')   # actual stats
 
+# the week
+latest_date <- lubridate::date('2020-4-11') 
+
 stat_df <- stat_df %>% 
-  mutate(date = lubridate::mdy(date))
+  mutate(date = lubridate::mdy(date)) %>% 
+  filter(date <= latest_date)
   
 
 # total number of cases = death + current_cases
@@ -40,14 +46,12 @@ p_scatter <- ggplot(res_df, aes(x = count, y = prediction, color = name)) +
 
 
 # errors ------------------------------------------------------------------
-
 df <- res_df %>% 
   mutate(error = count - prediction,
          normalized_error = (count - prediction) / count) 
 
 
 # this week's results -----------------------------------------------------
-latest_date <- max(df$date)
 
 p_latest_error <- df %>%
   filter(date == !! latest_date) %>% 
@@ -124,6 +128,7 @@ p_latest_error_death <- df %>%
 # timeline  ---------------------------------------------------------
 
 plot_df <- df %>%
+  filter(date <= !!latest_date) %>% 
   group_by(name, date) %>% 
   summarise(error = mean(abs(normalized_error * 100))) %>%
   ungroup() %>% 
@@ -174,7 +179,7 @@ p_countries <- df %>%
 
 
 p_country_error <- df %>% 
-  # filter(date == !!latest_date) %>% 
+  filter(date <= !!latest_date) %>% 
   group_by(country, name) %>% 
   summarise(average_error = mean(normalized_error * 100)) %>% 
   ungroup() %>% 
@@ -192,21 +197,6 @@ p_country_error <- df %>%
                                          size=0.5, linetype="solid", 
                                          colour ="grey60")) + 
   xlab('') + ylab('')
-
-
-p_country_error
-
-# List of countries
-library(countrycode)
-
-set.seed(3)
-
-countries <- codelist$country.name.en
-selected_countries <- sample(countries, 20)
-
-print(selected_countries)
-
-
 
 
 # Best/Worst predictions --------------------------------------------------

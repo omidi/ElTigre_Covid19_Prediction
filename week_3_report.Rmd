@@ -41,7 +41,7 @@ library(kableExtra)
 # library(formattable)
 
 
-source('comparison_week2.R')
+source('comparison_week3.R')
 ```
 
 > "I don't picture women in football, I'm sorry but this is my thinking" - Gennaro Gattuso 
@@ -52,8 +52,11 @@ We have used the prediction of previous week and compare them against the Johns 
 at around noone. The official numbers are shown bellow. 
 
 ```{r}
-stat <- tidyr::spread(stat_df, type, count)
-kable(stat, caption = "Official numbers for COVID-19 total cases and total death for different countries. ")
+latest_date <- max(stat_df$date)
+stat <- stat_df %>% 
+  filter(date == !! latest_date) %>% 
+  tidyr::spread(type, count)
+kable(stat, caption = "This week's official numbers for COVID-19 total cases and total death for different countries. ")
 ```
 
 Next figure shows the predicted values (Y-axis) against the official numbers (X-axis).  
@@ -103,8 +106,8 @@ tbl <- df %>%
 tbl %>% 
   kableExtra::kable(caption = "Participants ranking") %>% 
   kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE, font_size = 16) %>% 
-  kableExtra::row_spec(1, bold = T, background = "#c4ffd4") %>% 
-  kableExtra::row_spec(5, bold = T, background = "#ffcfcf") 
+    kableExtra::row_spec(1, bold = T, background = "#c4ffd4") # %>% 
+  # kableExtra::row_spec(total_players_this_week, bold = T, background = "#ffcfcf") 
 
 ```
 
@@ -145,6 +148,12 @@ For each country, we have separately ranked players. Bellow how each player perf
 p_countries
 ```
 
+Table bellow shows the *average absolute error* for each player in each country: 
+
+```{r}
+kable(countries_tbl, caption = "Players average absolute error for Death and Total combined for each country. ")
+```
+
 We can also see the actual prediction errors:
 
 ```{r , fig.height=6, fig.width=9.6}
@@ -165,7 +174,8 @@ tbl <- df %>%
     total_error = round(mean(abs(normalized_error) * 100), 2), 
     mentality = round(mean(normalized_error) * 100, 2)
             ) %>% 
-  mutate(rank = rank(total_error))  %>% 
+  arrange(desc(total_error)) %>% 
+  mutate(rank = rev(rank(total_error)))  %>% 
   select(Ranking = rank, Country = country, `Average error` = total_error, Mentality = mentality)
 
 kable(tbl, caption = "Ranking countries by the total error. From hardest to easiest.")
@@ -184,6 +194,7 @@ tbl <- df %>%
     total_error = round(mean(abs(normalized_error) * 100), 2), 
     mentality = round(mean(normalized_error) * 100, 2)
             ) %>% 
+  arrange(desc(total_error)) %>% 
   mutate(rank = rank(total_error))  %>% 
   select(Ranking = rank, Type = type, `Total error` = total_error, Mentality = mentality)
 
@@ -195,7 +206,6 @@ kable(tbl)
 # Best and worst predictions
 First, best predictions: 
 ```{r}
-
 tbl <- df %>%
   filter(date == !! latest_date) %>% 
   arrange(abs(normalized_error)) %>% 
@@ -238,10 +248,33 @@ fixture_tbl %>%
   kable(caption = "Ranking table") %>% 
     kable_styling(bootstrap_options = "striped", full_width = F, font_size = 12) %>% 
     row_spec(1, bold = T, background = "#c4ffd4") %>% 
-    row_spec(7, bold = T, background = "#ffcfcf") %>% 
-    column_spec(5, width = "3cm") # %>% 
+    row_spec(nrow(fixture_tbl), bold = T, background = "#ffcfcf") # %>% 
+    # column_spec(5, width = "3cm") # %>% 
     # add_header_above(c(" ", "Badgest" = 8))
     
+  
+```
+
+## Evolution of points over time 
+
+```{r , fig.height=5, fig.width=7}
+points_evolution_over_time_plt
+```
+
+# Average error each Week
+
+```{r , fig.width=6, fig.height=4}
+# weeks ranking -----------------------------------------------------------
+
+df %>% 
+  group_by(date) %>% 
+  summarise(mean_error = mean(abs(normalized_error)) * 100) %>% 
+  ggplot(data = .) +
+  geom_bar(aes(x = date, y = mean_error), stat = 'identity', fill = '#3d5675') + 
+  # theme_classic() + 
+  labs(x = 'Date', y = 'Average error (%)', 
+       title = 'Weekly average error') + 
+  theme_ipsum_rc(axis="y") 
   
 ```
 
@@ -268,3 +301,14 @@ Next week's challenge:
 # Apendix A: Scoring system 
 
 ![Scoring system](scoring_schema.png)
+
+# Apendix B: All predictions 
+
+```{r}
+dplyr::select(df, name, country, type, prediction, `true count` = count, date, error = normalized_error, badge, point) %>% 
+  mutate(error = round(error * 100, 3)) %>% 
+  arrange(date) %>% 
+    kable(caption = "All predictions") %>% 
+    kable_styling(bootstrap_options = "striped", full_width = F, font_size = 12) 
+
+```
