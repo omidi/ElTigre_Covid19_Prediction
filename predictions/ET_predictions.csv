@@ -1,1 +1,181 @@
-﻿name,country,type,prediction,pred_dateSaeedi,US,Total,280000,3/28/2020Saeedi,US,Death,5500,3/28/2020Saeedi,India,Total,2500,3/28/2020Saeedi,India,Death,150,3/28/2020Saeedi,Jamaica,Total,110,3/28/2020Saeedi,Jamaica,Death,9,3/28/2020KK,US,Total,450000,3/28/2020KK,US,Death,5000,3/28/2020KK,India,Total,5000,3/28/2020KK,India,Death,150,3/28/2020KK,Jamaica,Total,60,3/28/2020KK,Jamaica,Death,2,3/28/2020Pedomi,US,Total,400000,3/28/2020Pedomi,US,Death,4000,3/28/2020Pedomi,India,Total,6000,3/28/2020Pedomi,India,Death,200,3/28/2020Pedomi,Jamaica,Total,80,3/28/2020Pedomi,Jamaica,Death,5,3/28/2020Smooth Op,US,Total,300000,3/28/2020Smooth Op,US,Death,3000,3/28/2020Smooth Op,India,Total,8000,3/28/2020Smooth Op,India,Death,150,3/28/2020Smooth Op,Jamaica,Total,90,3/28/2020Smooth Op,Jamaica,Death,5,3/28/2020Dr. Brauwolf,US,Total,500000,3/28/2020Dr. Brauwolf,US,Death,6000,3/28/2020Dr. Brauwolf,India,Total,7000,3/28/2020Dr. Brauwolf,India,Death,250,3/28/2020Dr. Brauwolf,Jamaica,Total,100,3/28/2020Dr. Brauwolf,Jamaica,Death,10,3/28/2020A-Aron,US,Total,150000,3/28/2020A-Aron,US,Death,2000,3/28/2020A-Aron,India,Total,1500,3/28/2020A-Aron,India,Death,100,3/28/2020A-Aron,Jamaica,Total,50,3/28/2020A-Aron,Jamaica,Death,3,3/28/2020Saeedi,Japan,Total,3800,4/4/2020Saeedi,Japan,Death,115,4/4/2020Saeedi,Chile,Total,7450,4/4/2020Saeedi,Chile,Death,84,4/4/2020Saeedi,Israel,Total,11250,4/4/2020Saeedi,Israel,Death,87,4/4/2020Pedomi,Japan,Total,4000,4/4/2020Pedomi,Japan,Death,85,4/4/2020Pedomi,Chile,Total,5000,4/4/2020Pedomi,Chile,Death,50,4/4/2020Pedomi,Israel,Total,11000,4/4/2020Pedomi,Israel,Death,300,4/4/2020KK,Japan,Total,3900,4/4/2020KK,Japan,Death,99,4/4/2020KK,Chile,Total,7200,4/4/2020KK,Chile,Death,108,4/4/2020KK,Israel,Total,11100,4/4/2020KK,Israel,Death,88,4/4/2020Dr. Brauwolf,Japan,Total,6000,4/4/2020Dr. Brauwolf,Japan,Death,200,4/4/2020Dr. Brauwolf,Chile,Total,7000,4/4/2020Dr. Brauwolf,Chile,Death,150,4/4/2020Dr. Brauwolf,Israel,Total,12000,4/4/2020Dr. Brauwolf,Israel,Death,400,4/4/2020Vasco,Japan,Total,4800,4/4/2020Vasco,Japan,Death,95,4/4/2020Vasco,Chile,Total,6400,4/4/2020Vasco,Chile,Death,55,4/4/2020Vasco,Israel,Total,11000,4/4/2020Vasco,Israel,Death,75,4/4/2020Saeedi,Germany,Total,134879,4/11/2020Saeedi,Germany,Death,3781,4/11/2020Saeedi,Kuwait,Total,3146,4/11/2020Saeedi,Kuwait,Death,4,4/11/2020Saeedi,Poland,Total,9416,4/11/2020Saeedi,Poland,Death,495,4/11/2020Pedomi,Germany,Total,142000,4/11/2020Pedomi,Germany,Death,3400,4/11/2020Pedomi,Kuwait,Total,2000,4/11/2020Pedomi,Kuwait,Death,6,4/11/2020Pedomi,Poland,Total,9000,4/11/2020Pedomi,Poland,Death,290,4/11/2020Dr. Brauwolf,Germany,Total,145000,4/11/2020Dr. Brauwolf,Germany,Death,4000,4/11/2020Dr. Brauwolf,Kuwait,Total,1800,4/11/2020Dr. Brauwolf,Kuwait,Death,4,4/11/2020Dr. Brauwolf,Poland,Total,9000,4/11/2020Dr. Brauwolf,Poland,Death,315,4/11/2020Vasco,Germany,Total,152000,4/11/2020Vasco,Germany,Death,4175,4/11/2020Vasco,Kuwait,Total,2000,4/11/2020Vasco,Kuwait,Death,12,4/11/2020Vasco,Poland,Total,9200,4/11/2020Vasco,Poland,Death,310,4/11/2020KK,Germany,Total,146500,4/11/2020KK,Germany,Death,3700,4/11/2020KK,Kuwait,Total,1923,4/11/2020KK,Kuwait,Death,5,4/11/2020KK,Poland,Total,8302,4/11/2020KK,Poland,Death,298,4/11/2020Pinche,Germany,Total,140000,4/11/2020Pinche,Germany,Death,4000,4/11/2020Pinche,Kuwait,Total,1700,4/11/2020Pinche,Kuwait,Death,2,4/11/2020Pinche,Poland,Total,9000,4/11/2020Pinche,Poland,Death,305,4/11/2020
+﻿name,country,type,prediction,pred_date
+Saeedi,US,Total,280000,3/28/2020
+Saeedi,US,Death,5500,3/28/2020
+Saeedi,India,Total,2500,3/28/2020
+Saeedi,India,Death,150,3/28/2020
+Saeedi,Jamaica,Total,110,3/28/2020
+Saeedi,Jamaica,Death,9,3/28/2020
+KK,US,Total,450000,3/28/2020
+KK,US,Death,5000,3/28/2020
+KK,India,Total,5000,3/28/2020
+KK,India,Death,150,3/28/2020
+KK,Jamaica,Total,60,3/28/2020
+KK,Jamaica,Death,2,3/28/2020
+Pedomi,US,Total,400000,3/28/2020
+Pedomi,US,Death,4000,3/28/2020
+Pedomi,India,Total,6000,3/28/2020
+Pedomi,India,Death,200,3/28/2020
+Pedomi,Jamaica,Total,80,3/28/2020
+Pedomi,Jamaica,Death,5,3/28/2020
+Smooth Op,US,Total,300000,3/28/2020
+Smooth Op,US,Death,3000,3/28/2020
+Smooth Op,India,Total,8000,3/28/2020
+Smooth Op,India,Death,150,3/28/2020
+Smooth Op,Jamaica,Total,90,3/28/2020
+Smooth Op,Jamaica,Death,5,3/28/2020
+Dr. Brauwolf,US,Total,500000,3/28/2020
+Dr. Brauwolf,US,Death,6000,3/28/2020
+Dr. Brauwolf,India,Total,7000,3/28/2020
+Dr. Brauwolf,India,Death,250,3/28/2020
+Dr. Brauwolf,Jamaica,Total,100,3/28/2020
+Dr. Brauwolf,Jamaica,Death,10,3/28/2020
+A-Aron,US,Total,150000,3/28/2020
+A-Aron,US,Death,2000,3/28/2020
+A-Aron,India,Total,1500,3/28/2020
+A-Aron,India,Death,100,3/28/2020
+A-Aron,Jamaica,Total,50,3/28/2020
+A-Aron,Jamaica,Death,3,3/28/2020
+Saeedi,Japan,Total,3800,4/4/2020
+Saeedi,Japan,Death,115,4/4/2020
+Saeedi,Chile,Total,7450,4/4/2020
+Saeedi,Chile,Death,84,4/4/2020
+Saeedi,Israel,Total,11250,4/4/2020
+Saeedi,Israel,Death,87,4/4/2020
+Pedomi,Japan,Total,4000,4/4/2020
+Pedomi,Japan,Death,85,4/4/2020
+Pedomi,Chile,Total,5000,4/4/2020
+Pedomi,Chile,Death,50,4/4/2020
+Pedomi,Israel,Total,11000,4/4/2020
+Pedomi,Israel,Death,300,4/4/2020
+KK,Japan,Total,3900,4/4/2020
+KK,Japan,Death,99,4/4/2020
+KK,Chile,Total,7200,4/4/2020
+KK,Chile,Death,108,4/4/2020
+KK,Israel,Total,11100,4/4/2020
+KK,Israel,Death,88,4/4/2020
+Dr. Brauwolf,Japan,Total,6000,4/4/2020
+Dr. Brauwolf,Japan,Death,200,4/4/2020
+Dr. Brauwolf,Chile,Total,7000,4/4/2020
+Dr. Brauwolf,Chile,Death,150,4/4/2020
+Dr. Brauwolf,Israel,Total,12000,4/4/2020
+Dr. Brauwolf,Israel,Death,400,4/4/2020
+Vasco,Japan,Total,4800,4/4/2020
+Vasco,Japan,Death,95,4/4/2020
+Vasco,Chile,Total,6400,4/4/2020
+Vasco,Chile,Death,55,4/4/2020
+Vasco,Israel,Total,11000,4/4/2020
+Vasco,Israel,Death,75,4/4/2020
+Saeedi,Germany,Total,134879,4/11/2020
+Saeedi,Germany,Death,3781,4/11/2020
+Saeedi,Kuwait,Total,3146,4/11/2020
+Saeedi,Kuwait,Death,4,4/11/2020
+Saeedi,Poland,Total,9416,4/11/2020
+Saeedi,Poland,Death,495,4/11/2020
+Pedomi,Germany,Total,142000,4/11/2020
+Pedomi,Germany,Death,3400,4/11/2020
+Pedomi,Kuwait,Total,2000,4/11/2020
+Pedomi,Kuwait,Death,6,4/11/2020
+Pedomi,Poland,Total,9000,4/11/2020
+Pedomi,Poland,Death,290,4/11/2020
+Dr. Brauwolf,Germany,Total,145000,4/11/2020
+Dr. Brauwolf,Germany,Death,4000,4/11/2020
+Dr. Brauwolf,Kuwait,Total,1800,4/11/2020
+Dr. Brauwolf,Kuwait,Death,4,4/11/2020
+Dr. Brauwolf,Poland,Total,9000,4/11/2020
+Dr. Brauwolf,Poland,Death,315,4/11/2020
+Vasco,Germany,Total,152000,4/11/2020
+Vasco,Germany,Death,4175,4/11/2020
+Vasco,Kuwait,Total,2000,4/11/2020
+Vasco,Kuwait,Death,12,4/11/2020
+Vasco,Poland,Total,9200,4/11/2020
+Vasco,Poland,Death,310,4/11/2020
+KK,Germany,Total,146500,4/11/2020
+KK,Germany,Death,3700,4/11/2020
+KK,Kuwait,Total,1923,4/11/2020
+KK,Kuwait,Death,5,4/11/2020
+KK,Poland,Total,8302,4/11/2020
+KK,Poland,Death,298,4/11/2020
+Pinche,Germany,Total,140000,4/11/2020
+Pinche,Germany,Death,4000,4/11/2020
+Pinche,Kuwait,Total,1700,4/11/2020
+Pinche,Kuwait,Death,2,4/11/2020
+Pinche,Poland,Total,9000,4/11/2020
+Pinche,Poland,Death,305,4/11/2020
+Saeedi,UK,Total,145867,4/18/2020
+Saeedi,UK,Death,21160,4/18/2020
+Saeedi,Portugal,Total,23550,4/18/2020
+Saeedi,Portugal,Death,895,4/18/2020
+Saeedi,Iran,Total,90670,4/18/2020
+Saeedi,Iran,Death,5570,4/18/2020
+Dr. Brauwolf,UK,Total,145000,4/18/2020
+Dr. Brauwolf,UK,Death,22000,4/18/2020
+Dr. Brauwolf,Portugal,Total,24000,4/18/2020
+Dr. Brauwolf,Portugal,Death,880,4/18/2020
+Dr. Brauwolf,Iran,Total,87000,4/18/2020
+Dr. Brauwolf,Iran,Death,5500,4/18/2020
+Vasco,UK,Total,146000,4/18/2020
+Vasco,UK,Death,20500,4/18/2020
+Vasco,Portugal,Total,22300,4/18/2020
+Vasco,Portugal,Death,870,4/18/2020
+Vasco,Iran,Total,88500,4/18/2020
+Vasco,Iran,Death,5470,4/18/2020
+KK,UK,Total,141141,4/18/2020
+KK,UK,Death,20020,4/18/2020
+KK,Portugal,Total,22345,4/18/2020
+KK,Portugal,Death,876,4/18/2020
+KK,Iran,Total,88888,4/18/2020
+KK,Iran,Death,5555,4/18/2020
+Pedomi,UK,Total,130000,4/18/2020
+Pedomi,UK,Death,16900,4/18/2020
+Pedomi,Portugal,Total,21500,4/18/2020
+Pedomi,Portugal,Death,830,4/18/2020
+Pedomi,Iran,Total,89000,4/18/2020
+Pedomi,Iran,Death,5700,4/18/2020
+A-Aron,UK,Total,125627,4/18/2020
+A-Aron,UK,Death,17240,4/18/2020
+A-Aron,Portugal,Total,21011,4/18/2020
+A-Aron,Portugal,Death,747,4/18/2020
+A-Aron,Iran,Total,82568,4/18/2020
+A-Aron,Iran,Death,5177,4/18/2020
+Pinche,UK,Total,156000,4/18/2020
+Pinche,UK,Death,21400,4/18/2020
+Pinche,Portugal,Total,23200,4/18/2020
+Pinche,Portugal,Death,900,4/18/2020
+Pinche,Iran,Total,89000,4/18/2020
+Pinche,Iran,Death,5520,4/18/2020
+Saeedi,Spain,Total,246250,4/27/2020
+Saeedi,Spain,Death,24950,4/27/2020
+Saeedi,Brazil,Total,97500,4/27/2020
+Saeedi,Brazil,Death,6685,4/27/2020
+Saeedi,Russia,Total,125250,4/27/2020
+Saeedi,Russia,Death,1450,4/27/2020
+KK,Spain,Total,25000,4/27/2020
+KK,Spain,Death,25252,4/27/2020
+KK,Brazil,Total,84048,4/27/2020
+KK,Brazil,Death,6363,4/27/2020
+KK,Russia,Total,113311,4/27/2020
+KK,Russia,Death,1250,4/27/2020
+Pinche,Spain,Total,250000,4/27/2020
+Pinche,Spain,Death,25000,4/27/2020
+Pinche,Brazil,Total,95000,4/27/2020
+Pinche,Brazil,Death,7000,4/27/2020
+Pinche,Russia,Total,122000,4/27/2020
+Pinche,Russia,Death,1250,4/27/2020
+Vasco,Spain,Total,259000,4/27/2020
+Vasco,Spain,Death,25400,4/27/2020
+Vasco,Brazil,Total,90000,4/27/2020
+Vasco,Brazil,Death,5900,4/27/2020
+Vasco,Russia,Total,130000,4/27/2020
+Vasco,Russia,Death,1100,4/27/2020
+Dr. Brauwolf,Spain,Total,250000,4/27/2020
+Dr. Brauwolf,Spain,Death,25300,4/27/2020
+Dr. Brauwolf,Brazil,Total,90000,4/27/2020
+Dr. Brauwolf,Brazil,Death,6500,4/27/2020
+Dr. Brauwolf,Russia,Total,115000,4/27/2020
+Dr. Brauwolf,Russia,Death,1400,4/27/2020
+Pedomi,Spain,Total,245000,4/27/2020
+Pedomi,Spain,Death,25000,4/27/2020
+Pedomi,Brazil,Total,80000,4/27/2020
+Pedomi,Brazil,Death,5300,4/27/2020
+Pedomi,Russia,Total,85000,4/27/2020
+Pedomi,Russia,Death,1100,4/27/2020
